@@ -18,13 +18,15 @@ export const calculateCarRent = (city_mpg: number, year: number) => {
 };
 
 export async function fetchCars(filters: FilterProps) {
+  const { manufacturer, year, model, limit, fuel } = filters;
+
   const headers = {
     'X-RapidAPI-Key': '284a29e649mshd3a9e5df1e7facfp19d5bdjsn64333d2862a9',
     'X-RapidAPI-Host': 'cars-by-api-ninjas.p.rapidapi.com',
   };
 
   const response = await fetch(
-    'https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?model=q3',
+    `https://cars-by-api-ninjas.p.rapidapi.com/v1/cars?make=${manufacturer}&year=${year}&model=${model}&limit=${limit}&fuel_type=${fuel}`,
     { headers: headers }
   );
 
@@ -47,4 +49,14 @@ export const generateCarImageUrl = (car: CarProps, angel?: string) => {
   url.searchParams.append('angle', `${angel}`);
 
   return `${url}`;
+};
+
+export const updateSearchParam = (type: string, value: string) => {
+  const searchParams = new URLSearchParams(window.location.search);
+
+  searchParams.set(type, value);
+
+  const newPathname = `${window.location.pathname}?${searchParams.toString()}`;
+
+  return newPathname;
 };
