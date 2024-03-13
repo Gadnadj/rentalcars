@@ -31,7 +31,7 @@ export async function fetchCars() {
   return result;
 }
 
-export const generateCardImageUrl = (car: CarProps, angel?: string) => {
+export const generateCarImageUrl = (car: CarProps, angel?: string) => {
   // key...
   const url = new URL('https://cdn.imagin.studio/getimage');
 
