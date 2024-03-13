@@ -1,9 +1,15 @@
-import React from 'react'
+'use client';
+import { SearchManufacter } from '@/components/';
 
 const SearchBar = () => {
+  const handleSearch = () => {};
   return (
-    <div>SearchBar</div>
-  )
-}
+    <form className='searchbar' onSubmit={handleSearch}>
+      <div className='searchbar__item'>
+        <SearchManufacter />
+      </div>
+    </form>
+  );
+};
 
-export default SearchBar
+export default SearchBar;

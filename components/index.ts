@@ -4,5 +4,6 @@ import Footer from './Footer';
 import NavBar from './NavBar';
 import SearchBar from './SearchBar';
 import CustomFilter from './CustomFilter';
+import SearchManufacter from './SearchManufacter';
 
-export { Hero, CustomButton, NavBar, Footer, SearchBar, CustomFilter };
+export { Hero, CustomButton, NavBar, Footer, SearchBar, CustomFilter, SearchManufacter };
